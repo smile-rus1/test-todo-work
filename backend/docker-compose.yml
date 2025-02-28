@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: django-app
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    networks:
+      - backend_network
+
+  postgres:
+    image: postgres:15
+    container_name: postgres_django
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_django_data:/var/lib/postgresql/data
+    networks:
+      - backend_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ruslan"]
+      interval: 5s
+      retries: 5
+
+networks:
+  backend_network:
+    external: true
+
+volumes:
+  pg_django_data:
