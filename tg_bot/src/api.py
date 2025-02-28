@@ -2,7 +2,7 @@ import logging
 
 import aiohttp
 
-from src.config import config
+from config import config
 
 
 async def register_user(user_data: dict):

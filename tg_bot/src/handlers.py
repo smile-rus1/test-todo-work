@@ -5,10 +5,10 @@ from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardBut
 
 from keyboards import main_keyboard, create_task_inline_keyboard, inline_keyboard_to_task, inline_keyboard_to_message, \
     inline_keyboard_user_categories
-from src.api import register_user, get_categories, create_categories, create_tasks, get_user_tasks, get_user_task_by_id, \
+from api import register_user, get_categories, create_categories, create_tasks, get_user_tasks, get_user_task_by_id, \
     delete_user_task, create_comment_to_task, show_all_comments_to_task_by_id, delete_message_by_id, edit_message_by_id, \
     edit_task_by_id, show_user_categories, show_detail_user_category, delete_user_category, edit_category_
-from src.states import AddTaskSG, AddCommentsToTask, EditMessage, EditTask, EditCategory
+from states import AddTaskSG, AddCommentsToTask, EditMessage, EditTask, EditCategory
 
 router = Router()
 

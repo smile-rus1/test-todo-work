@@ -1,4 +1,4 @@
-from src.handlers import router
+from handlers import router
 
 
 def register_handlers(dp):
