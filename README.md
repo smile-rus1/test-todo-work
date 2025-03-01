@@ -11,7 +11,7 @@ DB_PASSWORD=YOU_PASSWORD
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=todo
-4. Создать сеть в докере:  
+4. Создать сеть в докере: docker network create backend_network
 5. Поднять компоуз: docker-compose up --build -d
 6. Чтобы остановить контейнер: docker-compose stop или docker-compose down
 
